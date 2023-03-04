@@ -44,3 +44,17 @@ You don’t have to ever use `eject`. The curated feature set is suitable for sm
 You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
 To learn React, check out the [React documentation](https://reactjs.org/).
+
+
+App.tsx: 앱의 최상위 컴포넌트
+index.tsx: 앱의 진입점
+components/AddTodoForm.tsx: 새로운 할 일을 추가하기 위한 폼 컴포넌트
+components/TodoItem.tsx: 할 일 항목 컴포넌트
+components/TodoList.tsx: 모든 할 일을 보여주는 컴포넌트
+pages/TodoPage.tsx: 할 일 페이지 컴포넌트
+store/actions/todoActions.ts: 할 일 관련 액션 생성자 함수
+store/reducers/todoReducer.ts: 할 일 관련 리듀서
+store/slices/todoSlice.ts: 할 일 관련 slice
+store/configureStore.ts: Redux store 설정 파일
+store/index.ts: 앱의 모든 리듀서 및 미들웨어를 결합하여 Redux store를 생성하는 파일
+utils/constants.ts: 앱에서 사용되는 상수 값 등을 정의하는 파일
