@@ -35,7 +35,7 @@ function TodoItem({ todo }: Props) {
 
 
     return (
-        <Box flex='1' alignItems="center" mb={4}>
+        <Box display='flex' alignItems="center" mb={4}>
             <Checkbox
                 isChecked={todo.completed}
                 onChange={handleToggle}
