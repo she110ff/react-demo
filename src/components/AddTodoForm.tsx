@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { Box, Flex, Input, Button } from '@chakra-ui/react';
-import { addTodo } from '../store/actions/todoActions';
+import { addTodo }  from '../store/reducers/todoReducer';
 
 function AddTodoForm() {
     const dispatch = useDispatch();
@@ -11,7 +11,7 @@ function AddTodoForm() {
         event.preventDefault();
         if (todoText.trim()) {
             dispatch(addTodo({
-                id: new Date().getTime(),
+                id: new Date().getTime().toString(),
                 text: todoText,
                 completed: false
             }));

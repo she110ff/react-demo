@@ -18,7 +18,7 @@ export const todoSlice = createSlice({
                 todo.completed = action.payload.completed;
             }
         },
-        deleteTodo: (state, action: PayloadAction<number>) => {
+        deleteTodo: (state, action: PayloadAction<string>) => {
             state.todos = state.todos.filter((t) => t.id !== action.payload);
         }
     }

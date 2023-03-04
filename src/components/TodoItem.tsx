@@ -3,7 +3,7 @@ import { useDispatch } from 'react-redux';
 import { Box, Checkbox, Text, IconButton } from '@chakra-ui/react';
 import { RiDeleteBinLine } from 'react-icons/ri';
 import { Todo } from '../store/types';
-import { toggleTodo, deleteTodo } from '../store/actions/todoActions';
+import {toggleTodo, deleteTodo}  from '../store/reducers/todoReducer';
 
 interface Props {
     todo: Todo;
@@ -24,7 +24,7 @@ function TodoItem({ todo }: Props) {
     };
 
     return (
-        <Box d="flex" alignItems="center" mb={4}>
+        <Box flex='1' alignItems="center" mb={4}>
             <Checkbox
                 isChecked={todo.completed}
                 onChange={handleToggle}
