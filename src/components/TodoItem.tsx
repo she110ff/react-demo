@@ -1,9 +1,10 @@
-import React from 'react';
+import React, {useState} from 'react';
 import { useDispatch } from 'react-redux';
 import { Box, Checkbox, Text, IconButton } from '@chakra-ui/react';
-import { RiDeleteBinLine } from 'react-icons/ri';
+import { RiDeleteBinLine, RiEditLine } from 'react-icons/ri';
 import { Todo } from '../store/types';
 import {toggleTodo, deleteTodo}  from '../store/reducers/todoReducer';
+import EditTodoForm from './EditTodoForm';
 
 interface Props {
     todo: Todo;
@@ -11,6 +12,7 @@ interface Props {
 
 function TodoItem({ todo }: Props) {
     const dispatch = useDispatch();
+    const [isEditing, setIsEditing] = useState<boolean>(false);
 
     const handleToggle = () => {
         dispatch(toggleTodo({
@@ -22,6 +24,15 @@ function TodoItem({ todo }: Props) {
     const handleDelete = () => {
         dispatch(deleteTodo(todo.id));
     };
+
+    const handleEdit = () => {
+        setIsEditing(true);
+    };
+
+    const handleClose = () => {
+        setIsEditing(false);
+    };
+
 
     return (
         <Box flex='1' alignItems="center" mb={4}>
@@ -40,6 +51,15 @@ function TodoItem({ todo }: Props) {
                 colorScheme="red"
                 onClick={handleDelete}
             />
+            <IconButton
+                aria-label="Edit"
+                icon={<RiEditLine />}
+                mr={4}
+                onClick={handleEdit}
+            />
+            {isEditing && (
+                <EditTodoForm todo={todo} isOpen={isEditing} onClose={handleClose} />
+            )}
         </Box>
     );
 }
