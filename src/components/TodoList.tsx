@@ -4,9 +4,10 @@ import { Box, Text } from '@chakra-ui/react';
 import { TodoState } from '../store/types';
 import TodoItem from './TodoItem';
 import {Todo} from "../store/types";
+import {RootState} from "../store/reducers";
 
 function TodoList() {
-    const todos = useSelector((state: TodoState) => state.todos);
+    const {todos} = useSelector((state: RootState) => state.todo);
     console.log('todos :', todos)
     if (!todos || todos.length === 0) {
         return (

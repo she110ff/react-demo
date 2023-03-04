@@ -9,6 +9,7 @@ function AddTodoForm() {
 
     const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
         event.preventDefault();
+        console.log('todoText :', todoText)
         if (todoText.trim()) {
             dispatch(addTodo({
                 id: new Date().getTime().toString(),

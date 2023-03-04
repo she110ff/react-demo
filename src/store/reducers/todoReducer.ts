@@ -6,7 +6,7 @@ const initialState: TodoState = {
 };
 
 export const todoSlice = createSlice({
-    name: 'todo',
+    name: 'todos',
     initialState,
     reducers: {
         addTodo: (state, action: PayloadAction<Todo>) => {
@@ -25,5 +25,6 @@ export const todoSlice = createSlice({
 });
 
 export const { addTodo, toggleTodo, deleteTodo } = todoSlice.actions;
+
 
 export default todoSlice.reducer;
